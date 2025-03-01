@@ -4,12 +4,11 @@ namespace App\Http\Responses;
 
 use App\Contracts\BaseResponse;
 use Illuminate\Http\RedirectResponse;
-use Laravel\Fortify\Fortify;
+use Illuminate\Support\Facades\Lang;
 use Symfony\Component\HttpFoundation\Response;
 
-class SendEmailResponse implements BaseResponse
+class VerifyEmailResponse implements BaseResponse
 {
-
     /**
      * Create an HTTP response that represent the object.
      *
@@ -18,12 +17,13 @@ class SendEmailResponse implements BaseResponse
      */
     public function toResponse($request): RedirectResponse|Response
     {
+
         if($request->wantsJson()) {
             return response()->json([
-                'message' => 'Email verification sent'
+                'message' => Lang::get('Email verified successfully')
             ]);
         }
 
-        return back()->with('status', Fortify::VERIFICATION_LINK_SENT);
+        return response()->noContent();
     }
 }

@@ -10,7 +10,7 @@
         "laravel/framework": "^11.9",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
-        "milcomp/cloudflare-d1-database": "^1.1",
+        "league/flysystem-aws-s3-v3": "^3.29",
         "resend/resend-laravel": "^0.16.0"
     },
     "require-dev": {
@@ -20,7 +20,7 @@
         "lucascudo/laravel-pt-br-localization": "^3.0",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.0",
-        "phpunit/phpunit": "^11.0.1"
+        "pestphp/pest": "^3.7"
     },
     "autoload": {
         "psr-4": {

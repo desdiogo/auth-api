@@ -1,19 +1,13 @@
 <?php
 
-namespace Tests\Feature;
+it('returns a successful response', function () {
+    $response = $this->get('/up');
 
-// use Illuminate\Foundation\Testing\RefreshDatabase;
-use Tests\TestCase;
+    $response->assertStatus(200);
+});
 
-class ExampleTest extends TestCase
-{
-    /**
-     * A basic test example.
-     */
-    public function test_the_application_returns_a_successful_response(): void
-    {
-        $response = $this->get('/');
+it('returns a error in login', function () {
+    $response = $this->json('POST', '/api/login', [], ['accept' => 'application/json']);
 
-        $response->assertStatus(200);
-    }
-}
+    $response->assertStatus(422);
+});

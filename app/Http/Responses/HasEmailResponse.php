@@ -18,7 +18,7 @@ class HasEmailResponse implements BaseResponse
     public function toResponse($request): RedirectResponse|Response
     {
         if($request->wantsJson()) {
-            response()->json([
+            return response()->json([
                'message' => 'You email is already verified'
             ]);
         }
